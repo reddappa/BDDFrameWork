@@ -1,0 +1,21 @@
+package com.bdd.runner;
+
+import cucumber.api.CucumberOptions;
+import cucumber.api.Scenario;
+import cucumber.api.junit.Cucumber;
+
+import java.util.Map;
+
+import org.junit.runner.RunWith;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(
+		  features="D:\\Selenium\\BDDframework\\src\\test\\java\\com\\bdd\\featurefiles",
+	        glue = "com.bdd.steps",
+	        		tags={"@Verify_Login_Functionality"},
+		plugin = {"pretty"})
+public class TestRunner {
+	
+	public static Map<String, String> config;
+	public static Scenario scenario;
+}

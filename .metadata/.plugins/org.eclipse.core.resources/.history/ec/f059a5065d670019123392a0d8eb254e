@@ -1,0 +1,17 @@
+package com.bdd.Hooks;
+
+public class Hooks {
+	
+	//@Before
+	public void Before()
+	{
+		System.out.println("Before");
+	}
+	
+	//@After
+	public void After()
+	{
+		System.out.println("After");
+	}
+
+}

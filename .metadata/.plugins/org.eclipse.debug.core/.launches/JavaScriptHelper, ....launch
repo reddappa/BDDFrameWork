@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.testng.eclipse.launchconfig">
+<stringAttribute key="org.eclipse.jdt.launching.CLASSPATH_PROVIDER" value="org.eclipse.m2e.launchconfig.classpathProvider"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="org.testng.remote.RemoteTestNG"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="BDDframework"/>
+<stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.m2e.launchconfig.sourcepathProvider"/>
+<mapAttribute key="org.testng.eclipse.ALL_CLASS_METHODS"/>
+<listAttribute key="org.testng.eclipse.CLASS_TEST_LIST">
+<listEntry value="com.bdd.framework.Helper.TextBoxHelper"/>
+<listEntry value="com.bdd.Reporting.ExtentCucumberFormatter"/>
+<listEntry value="com.bdd.framework.Helper.JavaScriptHelper"/>
+<listEntry value="com.bdd.framework.Helper.BrowserHelper"/>
+<listEntry value="com.bdd.framework.Helper.ButtonHelper"/>
+<listEntry value="com.bdd.framework.utility.BaseUtilities"/>
+<listEntry value="com.bdd.framework.Helper.LinkHelper"/>
+<listEntry value="com.bdd.pages.LoginPage"/>
+<listEntry value="com.bdd.framework.Helper.DropDownHelper"/>
+<listEntry value="com.bdd.runner.TestRunnerJunit"/>
+<listEntry value="com.bdd.framework.Helper.NavigationHelper"/>
+<listEntry value="com.bdd.framework.utility.ResourceHelper"/>
+<listEntry value="com.bdd.hooks.Hooks"/>
+<listEntry value="com.bdd.framework.Helper.GenericHelper"/>
+<listEntry value="com.bdd.framework.Helper.CheckBoxOrRadioButtonHelper"/>
+<listEntry value="com.bdd.runner.RunCuke"/>
+<listEntry value="com.bdd.framework.Helper.WaitHelper"/>
+<listEntry value="com.bdd.Reporting.Screenshot"/>
+<listEntry value="com.bdd.framework.utility.Reporting"/>
+<listEntry value="com.bdd.framework.utility.DateTimeHelper"/>
+<listEntry value="com.bdd.steps.LoginSteps"/>
+<listEntry value="com.bdd.framework.utility.ExcelReader"/>
+<listEntry value="com.bdd.framework.enums.Platform"/>
+<listEntry value="com.bdd.framework.enums.BrowserType"/>
+<listEntry value="com.bdd.framework.Helper.AlertHelper"/>
+<listEntry value="com.bdd.framework.exception.NoSutiableDriverFoundException"/>
+<listEntry value="com.bdd.Reporting.Reporter"/>
+<listEntry value="com.bdd.framework.Helper.LoggerHelper"/>
+<listEntry value="com.bdd.framework.utility.ReadConfig"/>
+<listEntry value="com.bdd.framework.utility.XLUtils"/>
+</listAttribute>
+<listAttribute key="org.testng.eclipse.METHOD_TEST_LIST"/>
+<listAttribute key="org.testng.eclipse.PACKAGE_TEST_LIST"/>
+<stringAttribute key="org.testng.eclipse.PRE_DEFINED_LISTENERS" value=""/>
+<intAttribute key="org.testng.eclipse.TYPE" value="1"/>
+</launchConfiguration>

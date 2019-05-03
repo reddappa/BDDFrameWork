@@ -1,0 +1,10 @@
+package com.bdd.Reporting;
+
+public class Screenshot {
+	
+	public void screenshots()
+	{
+		
+	}
+
+}

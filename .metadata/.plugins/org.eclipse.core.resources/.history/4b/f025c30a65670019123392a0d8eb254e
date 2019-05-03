@@ -1,0 +1,7 @@
+Feature: Test Hooks
+
+@Verify_Login_Functionality1
+Scenario: This scenario is to test hooks functionality
+	Given this is the first step
+	When this is the second step
+	Then this is the third step

@@ -1,0 +1,43 @@
+package com.bdd.runner;
+
+import java.util.Map;
+
+import org.testng.annotations.AfterClass;
+import com.bdd.Reporting.Reporter;
+
+
+import cucumber.api.CucumberOptions;
+import cucumber.api.Scenario;
+import cucumber.api.java.After;
+import cucumber.api.testng.AbstractTestNGCucumberTests;
+@CucumberOptions(
+         features="D:\\Selenium\\BDDframework\\src\\test\\java\\com\\bdd\\featurefiles",
+        glue = {"com.bdd.steps","com.bdd.hooks"},plugin = {"com.bdd.Reporting.ExtentCucumberFormatter"},
+        monochrome=true,
+        tags={"@Verify_Login_Functionality"}
+        )
+public class RunCuke extends AbstractTestNGCucumberTests
+{
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

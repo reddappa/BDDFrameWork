@@ -1,0 +1,5 @@
+package com.bdd.reporting.Listeners;
+
+public class ITestListenerImpl {
+
+}

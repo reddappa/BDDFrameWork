@@ -1,0 +1,19 @@
+package com.bdd.runner;
+
+import org.junit.runner.RunWith;
+import cucumber.api.CucumberOptions;
+import cucumber.api.junit.Cucumber;
+
+
+@RunWith(Cucumber.class)
+@CucumberOptions(
+        features="D:\\Selenium\\BDDframework\\src\\test\\java\\com\\bdd\\featurefiles",
+       glue = "com.bdd.steps",plugin = {"com.bdd.Reporting.ExtentCucumberFormatter"},
+       monochrome=true,
+       tags={"@Verify_Login_Functionality"}
+       )
+public class TestRunnerJunit {
+	
+	
+
+}

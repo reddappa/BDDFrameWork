@@ -1,0 +1,10 @@
+package com.configuration.browsers;
+
+public enum BrowserType {
+	Firefox,
+	Chrome,
+	Iexplorer,
+	PhantomJs,
+	HtmlUnitDriver
+
+}

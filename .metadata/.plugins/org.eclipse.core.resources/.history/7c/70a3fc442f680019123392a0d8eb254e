@@ -1,0 +1,6 @@
+package com.bdd.Reporting;
+package java.io;
+
+public interface Serializable {
+
+}

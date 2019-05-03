@@ -1,0 +1,10 @@
+package com.bdd.framework.configuration.browsers;
+
+public enum BrowserType {
+	Firefox,
+	Iexplorer,
+	PhantomJs,
+	HtmlUnitDriver,
+	Edge, Chrome
+
+}

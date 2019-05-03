@@ -1,0 +1,57 @@
+package com.bdd.framework.utility;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import com.bdd.framework.Helper.GenericHelper;
+import com.bdd.framework.enums.BrowserType;
+import com.bdd.framework.settings.ObjectRepo;
+
+import com.bdd.runner.TestRunner;
+
+import cucumber.api.Scenario;
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
+
+public class Hooks {
+	private static Boolean runOnce = false;
+
+	@Before
+	public void beforeAll() throws FileNotFoundException, IOException, InterruptedException {
+		if (!runOnce) {
+			TestRunner.config = FileRead.readProperties();
+		}
+	}
+	
+	@Before
+	public void before(Scenario scenario) {
+		TestRunner.scenario = scenario;
+	}
+
+	
+	public void after(Scenario scenario) {
+
+		if (scenario.isFailed()) {
+			Driver.embedScreenshot();
+		}
+	}
+	@After
+public void tearDownDriver(Scenario scenario) throws Exception {
+		
+		try {
+			if (ObjectRepo.driver != null) {
+				
+				if(scenario.isFailed())
+					scenario.write(new GenericHelper(ObjectRepo.driver).takeScreenShot(scenario.getName()));
+				
+				ObjectRepo.driver.quit();
+				ObjectRepo.driver = null;
+				
+			}
+		} catch (Exception e) {
+			
+			throw e;
+		}
+	}
+
+}

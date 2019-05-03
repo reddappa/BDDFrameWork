@@ -1,0 +1,5 @@
+package com.bdd.framework.configreader;
+
+public class PropertyFileReader {
+
+}

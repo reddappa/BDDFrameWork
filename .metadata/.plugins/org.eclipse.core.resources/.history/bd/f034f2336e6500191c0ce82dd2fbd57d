@@ -1,0 +1,15 @@
+Feature: LoginDD
+
+Scenario Outline: Verifying Automation Login Functionality DataDriven
+Given Open a browser and Enter URL
+When Enter valid username"<username>" and password "<password>"
+And Click on loginbtn 
+Then verify Page title
+Then close the browser
+
+Examples:
+|username|password|
+|Reddy   |Reddy123|
+|Reddy123|Reddy123|
+|Reddy23433   |Reddy123|
+|Reddy12333|Reddy123|

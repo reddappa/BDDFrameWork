@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.testng.eclipse.launchconfig">
+<stringAttribute key="org.eclipse.jdt.launching.CLASSPATH_PROVIDER" value="org.eclipse.m2e.launchconfig.classpathProvider"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="org.testng.remote.RemoteTestNG"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="UdemyCourse"/>
+<stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.m2e.launchconfig.sourcepathProvider"/>
+<mapAttribute key="org.testng.eclipse.ALL_CLASS_METHODS"/>
+<listAttribute key="org.testng.eclipse.CLASS_TEST_LIST">
+<listEntry value="com.ea.framework.controls.elements.TextBox"/>
+<listEntry value="com.ea.framework.base.DriverContext"/>
+<listEntry value="com.ea.framework.utilities.CucumberUtil"/>
+<listEntry value="steps.EmployeeSteps"/>
+<listEntry value="com.ea.framework.base.Base"/>
+<listEntry value="com.ea.framework.controls.elements.HyperLink"/>
+<listEntry value="com.ea.framework.utilities.ExtentManager"/>
+<listEntry value="com.ea.framework.utilities.ExcelUtil"/>
+<listEntry value="com.ea.framework.controls.api.ImplementedBy"/>
+<listEntry value="com.ea.framework.base.BasePage"/>
+<listEntry value="com.ea.framework.controls.internals.ControlBase"/>
+<listEntry value="pages.HomePage"/>
+<listEntry value="com.ea.framework.controls.elements.HyperLinkBase"/>
+<listEntry value="com.ea.framework.config.ConfigReader"/>
+<listEntry value="com.ea.framework.controls.internals.Control"/>
+<listEntry value="com.ea.framework.controls.api.ControlHandler"/>
+<listEntry value="com.ea.framework.controls.api.ImplementedByProcessor"/>
+<listEntry value="steps.TestInitialize"/>
+<listEntry value="com.ea.framework.controls.elements.Button"/>
+<listEntry value="com.ea.framework.utilities.ExtentReport"/>
+<listEntry value="runner.TestNgListener"/>
+<listEntry value="com.ea.framework.base.CurrentPageContext"/>
+<listEntry value="com.ea.framework.controls.api.ControlListHandler"/>
+<listEntry value="com.ea.framework.controls.elements.ButtonBase"/>
+<listEntry value="com.ea.framework.config.Settings"/>
+<listEntry value="pages.EmployeeListPage"/>
+<listEntry value="pages.CreateEmployeePage"/>
+<listEntry value="com.ea.framework.utilities.DatabaseUtil"/>
+<listEntry value="steps.LoginSteps"/>
+<listEntry value="com.ea.framework.base.LocalDriverContext"/>
+<listEntry value="runner.TestRunner"/>
+<listEntry value="runner.ReportListener"/>
+<listEntry value="com.ea.framework.controls.api.ControlFieldDecorator"/>
+<listEntry value="pages.LoginPage"/>
+<listEntry value="com.ea.framework.controls.api.ControlFactory"/>
+<listEntry value="com.ea.framework.base.Browser"/>
+<listEntry value="com.ea.framework.base.BrowserType"/>
+<listEntry value="com.ea.framework.controls.elements.TextBoxBase"/>
+<listEntry value="com.ea.framework.base.FrameworkInitialize"/>
+<listEntry value="com.ea.framework.utilities.ReportingUtil"/>
+<listEntry value="com.ea.framework.utilities.LogUtil"/>
+</listAttribute>
+<listAttribute key="org.testng.eclipse.METHOD_TEST_LIST"/>
+<listAttribute key="org.testng.eclipse.PACKAGE_TEST_LIST"/>
+<stringAttribute key="org.testng.eclipse.PRE_DEFINED_LISTENERS" value=""/>
+<intAttribute key="org.testng.eclipse.TYPE" value="1"/>
+</launchConfiguration>

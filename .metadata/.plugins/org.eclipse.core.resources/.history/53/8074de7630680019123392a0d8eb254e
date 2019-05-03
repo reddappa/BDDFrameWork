@@ -1,0 +1,56 @@
+package com.bdd.runner;
+
+import java.util.Map;
+
+import org.testng.annotations.AfterClass;
+import com.bdd.Reporting.Reporter;
+
+
+import cucumber.api.CucumberOptions;
+import cucumber.api.Scenario;
+import cucumber.api.java.After;
+import cucumber.api.testng.AbstractTestNGCucumberTests;
+@CucumberOptions(
+         features="D:\\Selenium\\BDDframework\\src\\test\\java\\com\\bdd\\featurefiles",
+        glue = {"com.bdd.steps","com.bdd.hooks"},plugin = {"com.bdd.Reporting.ExtentCucumberFormatter"},
+        monochrome=true,
+        tags={"@Verify_Login_Functionality"}
+        )
+public class RunCuke extends AbstractTestNGCucumberTests
+{
+	@AfterClass
+    public static void SetupReport() 
+	{
+		 Reporter.loadXMLConfig(System.getProperty("user.dir")+ "/extent-config.xml");
+	     Reporter.setSystemInfo("User Name", System.getProperty("user.name"));
+	     Reporter.setSystemInfo("Time Zone", System.getProperty("user.timezone"));
+	     Reporter.setSystemInfo("Machine", "Windows 10" + "64 Bit");
+	     Reporter.setSystemInfo("Selenium", "3.7.0");
+	     Reporter.setSystemInfo("Maven", "3.5.2");
+	     Reporter.setSystemInfo("Java Version", "1.8.0_151");
+	     
+    }
+	
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

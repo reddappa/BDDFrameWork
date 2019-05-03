@@ -1,0 +1,8 @@
+package com.bdd.Reporting;
+
+import com.aventstack.extentreports.Status;
+
+public interface RunResult {
+
+	Status getStatus();
+}

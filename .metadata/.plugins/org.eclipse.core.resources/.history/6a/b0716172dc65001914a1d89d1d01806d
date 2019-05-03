@@ -1,0 +1,5 @@
+package com.configuration.browsers;
+
+public class FirefoxBrowser {
+
+}

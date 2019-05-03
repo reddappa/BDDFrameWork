@@ -1,0 +1,142 @@
+package com.bdd.framework.Helper;
+import java.util.concurrent.TimeUnit;
+
+import org.apache.log4j.Logger;
+import org.openqa.selenium.WebDriver;
+
+
+import com.bdd.framework.configuration.browsers.*;
+import com.bdd.framework.enums.BrowserType;
+import com.bdd.framework.exception.NoSutiableDriverFoundException;
+import com.bdd.framework.settings.ObjectRepo;
+import com.bdd.framework.utility.ReadConfig;
+
+import cucumber.api.Scenario;
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
+
+/**
+ * @author jrr
+ *
+ *         April 23, 2019
+ */
+
+public class InitializeWebDrive {
+	ReadConfig readconfig=new ReadConfig();
+
+	private Logger oLog = LoggerHelper.getLogger(InitializeWebDrive.class);
+
+	//public InitializeWebDrive(IconfigReader reader) {
+		//ObjectRepo.reader = reader;
+	//}
+
+	public WebDriver standAloneStepUp(BrowserType bType) throws Exception {
+		try {
+			oLog.info(bType);
+
+			switch (bType) {
+
+			case Chrome:
+				ChromeBrowser chrome = ChromeBrowser.class.newInstance();
+				return chrome.getChromeDriver(chrome.getChromeCapabilities());
+
+			case Firefox:
+				FirefoxBrowser firefox = FirefoxBrowser.class.newInstance();
+				return firefox.getFirefoxDriver(firefox
+						.getFirefoxCapabilities());
+			default:
+				throw new NoSutiableDriverFoundException(" Driver Not Found : "
+						+ readconfig.getBrowser());
+			}
+		} catch (Exception e) {
+			oLog.equals(e);
+			throw e;
+		}
+	}
+	
+	@Before({"~@firefox","~@chrome","~@phantomjs","~@iexplorer"})
+	public void before() throws Exception {
+		setUpDriver(readconfig.getChromePath());
+		oLog.info(readconfig.getBrowser());
+	}
+
+	@After({"~@firefox","~@chrome","~@phantomjs","~@iexplorer"})
+	public void after(Scenario scenario) throws Exception {
+		tearDownDriver(scenario);
+		oLog.info("");
+	}
+	
+	@Before(order=4,value={"@iexplorer"})
+	public void beforeExplorer() throws Exception {
+		setUpDriver(BrowserType.Iexplorer);
+		oLog.info(BrowserType.Iexplorer);
+	}
+
+	@After(order=4,value={"@iexplorer"})
+	public void afterExplorer(Scenario scenario) throws Exception {
+		tearDownDriver(scenario);
+		oLog.info("");
+	}
+
+	@Before(order=3,value={"@firefox"})
+	public void beforeFirefox() throws Exception {
+		setUpDriver(BrowserType.Firefox);
+		oLog.info(BrowserType.Firefox);
+	}
+
+	@After(order=3,value={"@firefox"})
+	public void afterFirefox(Scenario scenario) throws Exception {
+		tearDownDriver(scenario);
+		oLog.info("");
+	}
+
+	@Before(order=2,value={"@chrome"})
+	public void beforeChrome() throws Exception {
+		setUpDriver(BrowserType.Chrome);
+		oLog.info(BrowserType.Chrome);
+	}
+
+	@After(order=2,value={"@chrome"})
+	public void afterChrome(Scenario scenario) throws Exception {
+		tearDownDriver(scenario);
+		oLog.info("");
+	}
+
+
+	public void setUpDriver(String string) throws Exception {
+		ObjectRepo.driver = standAloneStepUp(string);
+		oLog.debug("InitializeWebDrive : " + ObjectRepo.driver.hashCode());
+		ObjectRepo.driver
+				.manage()
+				.timeouts()
+				.pageLoadTimeout(readconfig.getPageLoadTimeOut(),
+						TimeUnit.SECONDS);
+		ObjectRepo.driver
+				.manage()
+				.timeouts()
+				.implicitlyWait(readconfig.getImplicitWait(),
+						TimeUnit.SECONDS);
+		ObjectRepo.driver.manage().window().maximize();
+
+	}
+
+	public void tearDownDriver(Scenario scenario) throws Exception {
+		
+		try {
+			if (ObjectRepo.driver != null) {
+				
+				if(scenario.isFailed())
+					scenario.write(new GenericHelper(ObjectRepo.driver).takeScreenShot(scenario.getName()));
+				
+				ObjectRepo.driver.quit();
+				
+				ObjectRepo.driver = null;
+				oLog.info("Shutting Down the driver");
+			}
+		} catch (Exception e) {
+			oLog.error(e);
+			throw e;
+		}
+	}
+
+}

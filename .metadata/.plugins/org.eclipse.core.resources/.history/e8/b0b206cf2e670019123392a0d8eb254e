@@ -1,0 +1,20 @@
+package com.bdd.Hooks;
+
+import cucumber.api.java.After;
+import cucumber.annotation.Before;
+
+public class Hooks {
+	
+	@Before
+	public void Before()
+	{
+		System.out.println("Before");
+	}
+	
+	@After
+	public void After()
+	{
+		System.out.println("After");
+	}
+
+}

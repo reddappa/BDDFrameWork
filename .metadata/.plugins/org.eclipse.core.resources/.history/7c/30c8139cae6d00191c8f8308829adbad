@@ -1,0 +1,13 @@
+package com.bdd.runner;
+
+import cucumber.api.CucumberOptions;
+
+@CucumberOptions(features = "D:\\Selenium\\BDDframework\\src\\test\\java\\com\\bdd\\featurefiles", glue = {
+		"com.bdd.steps",
+		"com.bdd.hooks" }, 
+monochrome = true, tags = {
+				"@Verify_Login_Functionality" })
+
+public class TestRunnerTestNG {
+
+}

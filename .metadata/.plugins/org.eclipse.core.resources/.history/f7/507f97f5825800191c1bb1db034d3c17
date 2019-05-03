@@ -1,0 +1,11 @@
+package com.Pages;
+
+public class LoginPage {
+	
+	
+	public void ClickMyAccount()
+	{
+		
+	}
+
+}

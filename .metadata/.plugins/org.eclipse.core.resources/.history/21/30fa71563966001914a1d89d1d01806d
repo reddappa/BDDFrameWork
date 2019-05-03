@@ -1,0 +1,9 @@
+package com.bdd.framework.configuration.browsers;
+
+public enum Platform {
+	Windows,
+	OSX, 
+	Ubuntu,
+	iOS,
+	Android 
+}

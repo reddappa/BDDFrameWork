@@ -1,0 +1,11 @@
+package com.Pages;
+
+public class LoginPage {
+	
+	WebDriver driver;
+	public void ClickMyAccount()
+	{
+		driver.Find
+	}
+
+}
