@@ -15,7 +15,6 @@ public class Hooks {
 
 	@Before
 	public void Before(Scenario sc) {
-		System.out.println("***************Before Scenario executed*****************");
 
 		BaseUtilities.InitilizeDriverSetup();
 
