@@ -3,13 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.bdd.runner.RunCuke">
+      <class name="com.practise.examples.LaunchBrowser">
         <methods>
-          <include name="setUpClass"/>
-          <include name="feature" invocation-numbers="0"/>
-          <include name="tearDownClass"/>
+          <include name="launch"/>
         </methods>
-      </class> <!-- com.bdd.runner.RunCuke -->
+      </class> <!-- com.practise.examples.LaunchBrowser -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

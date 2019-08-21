@@ -1,5 +1,7 @@
 package com.bdd.hooks;
 
+import java.util.Collection;
+
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
@@ -12,12 +14,22 @@ import cucumber.api.java.After;
 import cucumber.api.java.Before;
 
 public class Hooks {
+	BaseUtilities butil = new BaseUtilities();
+	public static String ScenarioName;
+	public static String FeaturefileName;
+	public static Collection<String> ScenarioTag;
+	public static String ScenarioStatus;
+	public static Scenario sc;
 
 	@Before
 	public void Before(Scenario sc) {
 
 		BaseUtilities.InitilizeDriverSetup();
-
+		
+		ScenarioName=sc.getName();
+		FeaturefileName=sc.getId();
+		ScenarioStatus=sc.getStatus();
+		ScenarioTag=sc.getSourceTagNames();
 		System.out.println("***************Before Scenario executed*****************");
 
 	}
@@ -54,6 +66,7 @@ public class Hooks {
 		Reporter.setSystemInfo("Selenium", "3.7.0");
 		Reporter.setSystemInfo("Maven", "3.5.2");
 		Reporter.setSystemInfo("Java Version", "1.8.0_151");
-
+		
+		System.out.println("***************Report Data completed*****************");
 	}
 }

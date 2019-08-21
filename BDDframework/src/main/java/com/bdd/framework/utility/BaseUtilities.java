@@ -2,6 +2,7 @@ package com.bdd.framework.utility;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.Collection;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 import org.apache.commons.io.FileUtils;
@@ -33,6 +34,8 @@ static ReadConfig readconfig=new ReadConfig();
 	
 	public static Logger logger;
 	public static String SeleniumGridHub;
+	
+
 	
 	public static void InitilizeDriverSetup()
 	{			
@@ -111,16 +114,14 @@ static ReadConfig readconfig=new ReadConfig();
 		return (generatedString2);
 	}
 	
-	@SuppressWarnings("null")
 	public void FeatureData()
 	{
-		Scenario scenario = null;
+		Scenario sc = null;
+		System.out.println("Name of the Feature File:"+ sc.getId());
+		System.out.println("Name of the Scenario : "+sc.getName());
+		System.out.println("Status of the Scenario :"+sc.getStatus());
+		System.out.println("Tagname :"+sc.getSourceTagNames());
 		
-		scenario.getName();
-		scenario.getId();
-		scenario.getSourceTagNames();
-		scenario.getStatus();
 	}
-
 
 }

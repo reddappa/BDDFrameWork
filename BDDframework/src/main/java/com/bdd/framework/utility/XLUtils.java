@@ -6,10 +6,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -106,5 +109,47 @@ public class XLUtils {
 		}
 	return logindata;
 	}
+	
+	public static String ReadScenarioData(String filePath,String ScenarioName,String SheetName,String FiledName,Map<String,Map<String,Map<String,String>>> GlobalExcelData)
+	{
+		String inputfield="";
+		for(Map.Entry<String, Map<String,Map<String,String>>> SheetnameItr :GlobalExcelData.entrySet())
+		{
+			String SheetnameAct=SheetnameItr.getKey();
+			if(SheetnameAct==SheetName)
+				
+			{
+				Map<String,Map<String,String>> ScenarionameItr=SheetnameItr.getValue();
+				
+				for(Map.Entry<String,Map<String,String>> ScenaroData : ScenarionameItr.entrySet())
+				{
+					String Scenarioname = ScenaroData.getKey();
+					
+					if(Scenarioname==ScenarioName)
+					{
+						Map<String,String> Scnariovalue=ScenaroData.getValue();
+						for(Map.Entry<String,String> scdata :Scnariovalue.entrySet())
+						{
+							String fieldname=scdata.getKey();
+							if(fieldname==FiledName)
+							{
+								inputfield=scdata.getValue();
+								break;
+							}
+						}
+						
+					}
+					
+				}
+				
+			}
+			
+		}
+		
+		
+		return 	inputfield;
+	}
+	
+	
 	
 }
